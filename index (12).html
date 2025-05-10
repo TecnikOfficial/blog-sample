@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Illustrated Transformer | Medium-Style Blog</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Charter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: rgba(0, 0, 0, 0.84);
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .author-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .author-info h3 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .author-info p {
+            margin: 0;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .social-links {
+            margin-top: 5px;
+        }
+        
+        .social-links a {
+            color: #03a87c;
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 16px;
+        }
+        
+        nav a:hover {
+            color: rgba(0, 0, 0, 0.8);
+        }
+        
+        /* Article Styles */
+        .article-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .article-meta {
+            display: flex;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .article-meta span {
+            margin-right: 15px;
+        }
+        
+        .article-content p {
+            font-size: 20px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .article-content h2 {
+            font-size: 30px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .article-content h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        /* Image Styles */
+        .article-image {
+            width: 100%;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        
+        .image-caption {
+            text-align: center;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.6);
+            margin-top: -20px;
+            margin-bottom: 30px;
+        }
+        
+        /* Code and Quote Styles */
+        pre {
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Menlo', monospace;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+        
+        blockquote {
+            border-left: 3px solid rgba(0, 0, 0, 0.84);
+            padding-left: 20px;
+            margin-left: 0;
+            font-style: italic;
+            font-size: 21px;
+            color: rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Update Box */
+        .update-box {
+            background-color: rgba(3, 168, 124, 0.1);
+            border-left: 4px solid #03a87c;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 3px;
+        }
+        
+        .update-box h4 {
+            margin-top: 0;
+            color: #03a87c;
+        }
+        
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .article-title {
+                font-size: 32px;
+            }
+            
+            .article-content p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="author-container">
+                <img src="/placeholder.svg?height=60&width=60" alt="Author" class="author-image">
+                <div class="author-info">
+                    <h3>Author Name</h3>
+                    <p>Visualizing machine learning one concept at a time.</p>
+                    <div class="social-links">
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <a href="#">Blog</a>
+                <a href="#">About</a>
+            </nav>
+        </header>
+        
+        <main>
+            <article>
+                <h1 class="article-title">The Illustrated Transformer</h1>
+                
+                <div class="article-meta">
+                    <span>Published: May 10, 2025</span>
+                    <span>12 min read</span>
+                    <span>Machine Learning</span>
+                </div>
+                
+                <div class="article-content">
+                    <p>
+                        In the field of natural language processing, the Transformer architecture has revolutionized how we approach machine translation and other language tasks. This post aims to break down the Transformer model with visual illustrations to make it more accessible.
+                    </p>
+                    
+                    <img src="/placeholder.svg?height=400&width=700" alt="Transformer Architecture Overview" class="article-image">
+                    <p class="image-caption">Figure 1: High-level overview of the Transformer architecture</p>
+                    
+                    <p>
+                        The Transformer was proposed in the paper "Attention is All You Need." A TensorFlow implementation of it is available as a part of the Tensor2Tensor package. Harvard's NLP group created a guide annotating the paper with PyTorch implementation. In this post, we will attempt to oversimplify things a bit and introduce the concepts one by one to hopefully make it easier to understand.
+                    </p>
+                    
+                    <h2>The Transformer Architecture</h2>
+                    
+                    <p>
+                        The Transformer is a model that uses attention to boost the speed with which these models can be trained. The biggest benefit, however, comes from how The Transformer lends itself to parallelization. It is in fact Google Cloud's recommendation to use The Transformer as a reference model to use their Cloud TPU offering.
+                    </p>
+                    
+                    <img src="/placeholder.svg?height=500&width=700" alt="Transformer Model Architecture" class="article-image">
+                    <p class="image-caption">Figure 2: Detailed view of the Transformer model architecture</p>
+                    
+                    <h3>Self-Attention at a High Level</h3>
+                    
+                    <p>
+                        Let's first look at what the attention mechanism does. Attention allows the model to focus on relevant parts of the input sequence when predicting a certain part of the output sequence.
+                    </p>
+                    
+                    <img src="/placeholder.svg?height=300&width=700" alt="Self-Attention Mechanism" class="article-image">
+                    <p class="image-caption">Figure 3: Visualization of the self-attention mechanism</p>
+                    
+                    <p>
+                        The attention mechanism looks at an input sequence and decides at each step which other parts of the sequence are important. This allows the model to selectively focus on the most relevant parts of the input.
+                    </p>
+                    
+                    <h3>Multi-Head Attention</h3>
+                    
+                    <p>
+                        Instead of performing a single attention function with d<sub>model</sub>-dimensional keys, values, and queries, the authors found it beneficial to linearly project the queries, keys, and values h times with different, learned linear projections.
+                    </p>
+                    
+                    <img src="/placeholder.svg?height=350&width=700" alt="Multi-Head Attention" class="article-image">
+                    <p class="image-caption">Figure 4: Multi-head attention allows the model to jointly attend to information from different representation subspaces</p>
+                    
+                    <pre>
+def attention(query, key, value, mask=None):
+    "Compute 'Scaled Dot Product Attention'"
+    d_k = query.size(-1)
+    scores = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(d_k)
+    if mask is not None:
+        scores = scores.masked_fill(mask == 0, -1e9)
+    p_attn = scores.softmax(dim=-1)
+    return torch.matmul(p_attn, value), p_attn</pre>
+                    
+                    <h2>Position-wise Feed-Forward Networks</h2>
+                    
+                    <p>
+                        In addition to attention sub-layers, each of the layers in the encoder and decoder contains a fully connected feed-forward network, which is applied to each position separately and identically.
+                    </p>
+                    
+                    <blockquote>
+                        The Transformer uses multi-head attention to allow the model to jointly attend to information from different representation subspaces at different positions.
+                    </blockquote>
+                    
+                    <div class="update-box">
+                        <h4>Update:</h4>
+                        <p>This post has now become a book! Check out the updated and expanded version speaking about the latest Transformer models and how they've evolved in the seven years since the original Transformer (like Multi-Query Attention and RoPE Positional embeddings).</p>
+                    </div>
+                    
+                    <h2>Positional Encoding</h2>
+                    
+                    <p>
+                        Since the Transformer model contains no recurrence and no convolution, in order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of the tokens in the sequence.
+                    </p>
+                    
+                    <img src="/placeholder.svg?height=250&width=700" alt="Positional Encoding" class="article-image">
+                    <p class="image-caption">Figure 5: Visualization of positional encoding patterns</p>
+                    
+                    <p>
+                        The positional encodings have the same dimension as the embeddings, so that the two can be summed. There are many choices of positional encodings, learned and fixed.
+                    </p>
+                    
+                    <h2>Conclusion</h2>
+                    
+                    <p>
+                        The Transformer architecture has proven to be a significant advancement in the field of natural language processing. Its ability to handle long-range dependencies and its parallelization capabilities make it a powerful tool for various language tasks.
+                    </p>
+                    
+                    <p>
+                        In future posts, we'll explore more advanced concepts related to Transformer models and their applications in different domains.
+                    </p>
+                </div>
+            </article>
+        </main>
+        
+        <footer>
+            <p>© 2025 Medium-Style Blog. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
